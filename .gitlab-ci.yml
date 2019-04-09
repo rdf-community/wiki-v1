@@ -1,0 +1,27 @@
+image: docker:latest
+
+services:
+- docker:dind
+
+stages:
+  - build-image
+  - deploy-wiki
+
+build-image:
+  stage: build-image
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" -f tools/build/Dockerfile .
+    - docker push "$CI_REGISTRY_IMAGE"
+    - docker tag "$CI_REGISTRY_IMAGE" "$CI_REGISTRY_IMAGE:latest"
+    - docker push "$CI_REGISTRY_IMAGE:latest"
+  only:
+    - deployed
+
+deploy-wiki:
+  stage: deploy-wiki
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack rdf-community --service wiki-1x --new-image $CI_REGISTRY_IMAGE:latest --wait-for-upgrade-to-finish --rollback-on-error
+  only:
+    - deployed
