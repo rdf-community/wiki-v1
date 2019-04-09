@@ -10,6 +10,8 @@ WORKDIR /var/wiki
 
 COPY ./tools/build/supervisord.conf /etc/supervisord.conf
 COPY . /var/wiki
+RUN yarn
+RUN yarn build
 
 ENV WIKI_JS_HEROKU=1
 
