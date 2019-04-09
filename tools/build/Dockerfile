@@ -8,7 +8,7 @@ RUN apk update && \
 
 WORKDIR /var/wiki
 
-COPY supervisord.conf /etc/supervisord.conf
+COPY ./tools/build/supervisord.conf /etc/supervisord.conf
 COPY . /var/wiki
 
 ENV WIKI_JS_HEROKU=1
