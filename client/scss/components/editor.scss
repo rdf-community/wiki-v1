@@ -7,9 +7,6 @@
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 	opacity: 1;
-	position: fixed;
-	top: 50px;
-	left: 0;
 	width: 100%;
   box-shadow: 0 0 5px rgba(0,0,0,.75);
 
@@ -301,7 +298,7 @@
 .CodeMirror {
 	border-left: none;
 	border-right: none;
-	margin-top: 49px;
+	margin-top: 0;
 	font-family: $core-font-standard;
   border: 10px solid mc('blue-grey', '100');
 }

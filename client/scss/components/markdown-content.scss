@@ -10,13 +10,13 @@
 }
 
 .mkcontent {
-	font-size: 14px;
+	font-size: 16px;
 	color: mc('grey', '700');
 	padding: 0 0 20px 0;
   width: 100%;
   overflow: hidden;
 
-	h1, h2, h3 {
+	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
 		margin: 10px 0 0;
 		padding: 7px 20px;
@@ -27,7 +27,7 @@
 		background-color: mc('blue-grey', '50');
     background: linear-gradient(to bottom, mc('blue-grey', '50'), mc('indigo', '50'));
 		border-bottom: 2px solid mc('indigo', '100');
-		font-size: 18px;
+		font-size: 20px;
 		color: mc('indigo', '500');
 
 		&:first-child {
@@ -52,7 +52,7 @@
 		border-right-width: 5px;
 		border-top-left-radius: 3px;
 		border-bottom-left-radius: 3px;
-		font-size: 16px;
+		font-size: 18px;
 		color: mc('teal', '900');
 		margin-left: 20px;
 	}
@@ -86,7 +86,7 @@
 		border-right-width: 5px;
 		border-top-left-radius: 3px;
 		border-bottom-left-radius: 3px;
-		font-size: 14px;
+		font-size: 16px;
 		color: mc('blue', '700');
 		margin-left: 20px;
 		margin-right: 1px;
@@ -94,6 +94,34 @@
 	}
 
 	.indent-h3 {
+		border-right: 5px solid mc('teal', '100');
+		margin-left: 20px;
+		margin-right: 1px;
+		padding-bottom: 10px;
+
+		& + h1, & + h2, & + h3 {
+			margin-top: 1px;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+	}
+
+	h4 {
+		background-color: lighten(mc('blue', '50'), 3%);
+		border-bottom: 1px solid mc('blue', '100');
+		border-right-width: 5px;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		font-size: 15px;
+		color: mc('blue', '700');
+		margin-right: 1px;
+		padding: 5px 20px;
+	}
+
+	.indent-h4 {
 		border-right: 5px solid mc('teal', '100');
 		margin-left: 20px;
 		margin-right: 1px;
@@ -143,7 +171,7 @@
 				font-weight: normal;
 				text-decoration: none;
 				color: mc('grey', '500');
-				font-size: 14px;
+				font-size: 16px;
 				margin-right: 5px;
 			}
 
@@ -191,7 +219,8 @@
 	}
 
 	p {
-		padding: 10px 20px;
+		padding: 8px 20px 6px 20px;
+		line-height: 22px;
 
 		&:first-child {
 			padding-top: 20px;
@@ -216,7 +245,7 @@
 		width: auto;
 		border-collapse: collapse;
 		margin: 10px 20px;
-		font-size: 14px;
+		font-size: 16px;
 
 		th {
 			background-color: mc('blue', '500');
@@ -268,7 +297,7 @@
 			color: mc('blue-grey', '100');
 			padding: 0;
       font-family: $core-font-monospace;
-      font-size: 13px;
+      font-size: 15px;
 		}
 
 		& + p {
@@ -319,7 +348,7 @@
         background-color: transparent;
         padding: 0;
         font-family: $core-font-monospace;
-        font-size: 13px;
+        font-size: 15px;
       }
 
       & + p {

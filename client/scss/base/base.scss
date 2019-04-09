@@ -15,6 +15,9 @@ html {
   padding-bottom: 67px;
   position: relative;
   min-height: 100%;
+
+  margin: 0 auto;
+  max-width: $widescreen;
 }
 
 body {
@@ -37,10 +40,6 @@ a {
 }
 
 // Container
-
-.has-stickynav {
-	padding-top: 50px;
-}
 
 .container {
   position: relative;

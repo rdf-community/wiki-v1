@@ -147,14 +147,13 @@ $(() => {
     el: '#root',
     methods: {
       changeTheme(opts) {
-        this.$el.className = `has-stickynav is-primary-${opts.primary} is-alternate-${opts.alt}`
+        this.$el.className = `is-primary-${opts.primary} is-alternate-${opts.alt}`
         this.$refs.header.className = `nav is-${opts.primary}`
         this.$refs.footer.className = `footer is-${opts.footer}`
       }
     },
     mounted() {
       $('a:not(.toc-anchor)').smoothScroll({ speed: 500, offset: -50 })
-      $('#header').sticky({ topSpacing: 0 })
       $('.sidebar-pagecontents').sticky({ topSpacing: 15, bottomSpacing: 75 })
     }
   })
